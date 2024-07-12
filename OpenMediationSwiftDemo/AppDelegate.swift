@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = nav
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
-        OpenMediation.initWithAppKey("mN5ML6VCxGbcmHZvW8tWVN8mkALGGnoW")//YOUR_APP_KEY
+        OpenMediation.initWithAppKey("2wXT9C0MPoDIAXEDeH04O86PeHQrsko4")//YOUR_APP_KEY
         return true
     }
     

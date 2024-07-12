@@ -24,7 +24,7 @@
     
     NSDictionary *configCacheData = [[OMConfig sharedInstance]configCacheData:appKey version:@"v1"];
     if (configCacheData) {
-        [[OMConfig sharedInstance] loadCongifData:configCacheData];
+        [[OMConfig sharedInstance] loadConfigData:configCacheData];
         completionHandler(nil);
     }
     
@@ -36,7 +36,7 @@
             if (!error) {
                 NSDictionary *configDic = (NSDictionary *)object;
                 [[OMConfig sharedInstance]saveConfigData:configDic appKey:appKey version:@"v1"];
-                [[OMConfig sharedInstance] loadCongifData:configDic];
+                [[OMConfig sharedInstance] loadConfigData:configDic];
                 completionHandler(nil);
                 OMLogI(@"OpenMediation SDK init success");
             } else {

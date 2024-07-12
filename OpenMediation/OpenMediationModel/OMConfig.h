@@ -55,7 +55,7 @@ typedef NS_ENUM(NSInteger, OMInitState) {
 
 - (NSString *)adFormatName:(OpenMediationAdFormat)adFormat;
 
-- (void)loadCongifData:(NSDictionary *)configData;
+- (void)loadConfigData:(NSDictionary *)configData;
 
 - (void)loadApi:(NSDictionary*)apiDic;
 

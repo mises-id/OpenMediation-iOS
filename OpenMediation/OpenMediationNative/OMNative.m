@@ -39,7 +39,7 @@
 }
 
 - (instancetype)initWithPlacementID:(NSString*)placementID rootViewController:(UIViewController*)viewController {
-    if (self = [super initWithPlacementID:placementID size:CGSizeMake(1200, 627) rootViewController:viewController]) {
+    if (self = [super initWithPlacementID:placementID size:CGSizeMake(1200, 560) rootViewController:viewController]) {
         _adnNativeAdMap = [NSMapTable weakToWeakObjectsMapTable];
     }
     return self;

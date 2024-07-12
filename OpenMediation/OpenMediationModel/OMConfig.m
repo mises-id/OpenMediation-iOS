@@ -71,7 +71,7 @@ static OMConfig *_instance = nil;
 }
 
 
-- (void)loadCongifData:(NSDictionary *)configData {
+- (void)loadConfigData:(NSDictionary *)configData {
     _cachedUnitMap = _adUnitMap?[_adUnitMap copy]:nil;
     _adnNameMap = [NSMutableDictionary dictionary];
     _adnAppkeyMap = [NSMutableDictionary dictionary];

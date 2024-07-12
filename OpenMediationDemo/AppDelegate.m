@@ -23,7 +23,7 @@
     }
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = [[[UINavigationController alloc] initWithRootViewController:[WelcomeViewController alloc]]init];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[WelcomeViewController alloc] init]];
     [self.window makeKeyAndVisible];
     [OpenMediation setUseCacheAdFormat:OpenMediationAdFormatSplash];
     [OpenMediation initWithAppKey:[self getAppKey] baseHost:[self getBaseHost] adFormat:(OpenMediationAdFormatInterstitial|OpenMediationAdFormatRewardedVideo|OpenMediationAdFormatCrossPromotion)];    
@@ -33,7 +33,7 @@
 - (NSString *)getAppKey {
     NSString *appKey = [[NSUserDefaults standardUserDefaults] valueForKey:@"OpenMediationAppKey"];
     if (!appKey) {
-        appKey = @"mN5ML6VCxGbcmHZvW8tWVN8mkALGGnoW";
+        appKey = @"2wXT9C0MPoDIAXEDeH04O86PeHQrsko4";
         [[NSUserDefaults standardUserDefaults] setValue:appKey forKey:@"OpenMediationAppKey"];
     }
     return appKey;
@@ -42,7 +42,7 @@
 - (NSString*)getBaseHost {
     NSString *baseHost = [[NSUserDefaults standardUserDefaults] valueForKey:@"OpenMediationBaseHost"];
     if (!baseHost) {
-        baseHost = @"https://s.openmediation.com";
+        baseHost = @"https://ads.test.mises.site";
         [[NSUserDefaults standardUserDefaults] setValue:baseHost forKey:@"OpenMediationBaseHost"];
     }
     return baseHost;

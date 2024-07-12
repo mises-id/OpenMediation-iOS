@@ -26,6 +26,27 @@
     return self;
 }
 
+- (void)loadAd{
+    __weak __typeof(self) weakSelf = self;
+    [[OMCrossPromotionCampaignManager sharedInstance] loadAdWithPid:_pid size:CGSizeMake(1200, 560) reqId:@"" action:4 payload:@"" completionHandler:^(OMCrossPromotionCampaign *campaign, NSError *error) {
+        if(!error) {
+            [campaign cacheMaterielCompletion:^{
+                if(weakSelf) {
+                    OMCrossPromotionNativeAd* nativeAd = [[OMCrossPromotionNativeAd alloc]initWithCampaign:campaign];
+                    nativeAd.adDelegate = weakSelf;
+                    if(weakSelf.delegate  && [weakSelf.delegate respondsToSelector:@selector(customEvent:didLoadAd:)]) {
+                        [weakSelf.delegate customEvent:weakSelf didLoadAd:nativeAd];
+                    }
+                }
+            }];
+            
+        }else{
+            if(weakSelf.delegate  && [weakSelf.delegate respondsToSelector:@selector(customEvent:didFailToLoadWithError:)]) {
+                [weakSelf.delegate customEvent:self didFailToLoadWithError:error];
+            }
+        }
+    }];
+}
 - (void)loadAdWithBidPayload:(NSString*)bidPayload {
     NSString *payload = @"";
     if ([bidPayload length]>0) {
@@ -45,7 +66,7 @@
     }
     
     __weak __typeof(self) weakSelf = self;
-    [[OMCrossPromotionCampaignManager sharedInstance] loadAdWithPid:_pid size:CGSizeMake(1200, 627) reqId:@"" action:4 payload:payload completionHandler:^(OMCrossPromotionCampaign *campaign, NSError *error) {
+    [[OMCrossPromotionCampaignManager sharedInstance] loadAdWithPid:_pid size:CGSizeMake(1200, 560) reqId:@"" action:4 payload:payload completionHandler:^(OMCrossPromotionCampaign *campaign, NSError *error) {
         if(!error) {
             [campaign cacheMaterielCompletion:^{
                 if(weakSelf) {

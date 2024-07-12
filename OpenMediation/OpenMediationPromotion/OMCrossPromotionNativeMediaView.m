@@ -3,6 +3,7 @@
 
 #import "OMCrossPromotionNativeMediaView.h"
 #import "OMToolUmbrella.h"
+#import "UIImageView+AnimatedGIF.h"
 
 @implementation OMCrossPromotionNativeMediaView
 
@@ -17,9 +18,26 @@
     return self;
 }
 
+-(BOOL) isGIF:(NSData *) data{
+    if (data.length < 3) {
+        return NO;
+    }
+    const char *bytes = [data bytes];
+    if (bytes[0] == 'G' && bytes[1] == 'I' && bytes[2] == 'F') {
+        return YES;
+    }
+    
+    return NO;
+}
+
 - (void)setNativeAd:(OMCrossPromotionNativeAd *)nativeAd {
     _nativeAd  = nativeAd;
-    _imgView.image = [UIImage imageWithData:[NSData dataWithContentsOfFile:[nativeAd.adObject mainImgCachePath]]];
+    NSData* data  = [NSData dataWithContentsOfFile:[nativeAd.adObject mainImgCachePath]];
+    if ([self isGIF:data]) {
+        _imgView.animatedImage = [TJAnimatedImage animatedImageWithData:data];
+    } else {
+        _imgView.image = [UIImage imageWithData:data];
+    }
 }
 
 - (void)click {

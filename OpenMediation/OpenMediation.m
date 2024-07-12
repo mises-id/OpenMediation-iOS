@@ -41,7 +41,7 @@ static NSTimer *SDKInitCheckTimer = nil;
 }
 
 + (void)initWithAppKey:(NSString*)appKey {
-    [self initWithAppKey:appKey baseHost:@"https://s.openmediation.com"];
+    [self initWithAppKey:appKey baseHost:@"https://ads.test.mises.site"];
 }
     
 + (void)initWithAppKey:(NSString*)appKey baseHost:(nonnull NSString *)host {
@@ -53,7 +53,7 @@ static NSTimer *SDKInitCheckTimer = nil;
 }
 
 + (void)initWithAppKey:(NSString *)appKey adFormat:(OpenMediationAdFormat)initAdTypes {
-    [self initWithAppKey:appKey baseHost:@"https://s.openmediation.com" adFormat:initAdTypes];
+    [self initWithAppKey:appKey baseHost:@"https://ads.test.mises.site" adFormat:initAdTypes];
 }
 
 /// Initializes OpenMediation's SDK with the requested ad types.

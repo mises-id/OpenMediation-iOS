@@ -1,0 +1,84 @@
+PODS:
+  - FBAudienceNetwork (6.12.0)
+  - Google-Mobile-Ads-SDK (9.13.0):
+    - GoogleAppMeasurement (< 11.0, >= 7.0)
+    - GoogleUserMessagingPlatform (>= 1.1)
+  - GoogleAppMeasurement (10.24.0):
+    - GoogleAppMeasurement/AdIdSupport (= 10.24.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
+    - GoogleUtilities/MethodSwizzler (~> 7.11)
+    - GoogleUtilities/Network (~> 7.11)
+    - "GoogleUtilities/NSData+zlib (~> 7.11)"
+    - nanopb (< 2.30911.0, >= 2.30908.0)
+  - GoogleAppMeasurement/AdIdSupport (10.24.0):
+    - GoogleAppMeasurement/WithoutAdIdSupport (= 10.24.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
+    - GoogleUtilities/MethodSwizzler (~> 7.11)
+    - GoogleUtilities/Network (~> 7.11)
+    - "GoogleUtilities/NSData+zlib (~> 7.11)"
+    - nanopb (< 2.30911.0, >= 2.30908.0)
+  - GoogleAppMeasurement/WithoutAdIdSupport (10.24.0):
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
+    - GoogleUtilities/MethodSwizzler (~> 7.11)
+    - GoogleUtilities/Network (~> 7.11)
+    - "GoogleUtilities/NSData+zlib (~> 7.11)"
+    - nanopb (< 2.30911.0, >= 2.30908.0)
+  - GoogleUserMessagingPlatform (2.0.1)
+  - GoogleUtilities/AppDelegateSwizzler (7.13.0):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Environment (7.13.0):
+    - GoogleUtilities/Privacy
+    - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleUtilities/Logger (7.13.0):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/MethodSwizzler (7.13.0):
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Network (7.13.0):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Privacy
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (7.13.0)":
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Privacy (7.13.0)
+  - GoogleUtilities/Reachability (7.13.0):
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Privacy
+  - nanopb (2.30910.0):
+    - nanopb/decode (= 2.30910.0)
+    - nanopb/encode (= 2.30910.0)
+  - nanopb/decode (2.30910.0)
+  - nanopb/encode (2.30910.0)
+  - PromisesObjC (2.4.0)
+
+DEPENDENCIES:
+  - FBAudienceNetwork (= 6.12.0)
+  - Google-Mobile-Ads-SDK (= 9.13.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - FBAudienceNetwork
+    - Google-Mobile-Ads-SDK
+    - GoogleAppMeasurement
+    - GoogleUserMessagingPlatform
+    - GoogleUtilities
+    - nanopb
+    - PromisesObjC
+
+SPEC CHECKSUMS:
+  FBAudienceNetwork: e0fcc9091fced34910ed0b6da06f129db46ac9e6
+  Google-Mobile-Ads-SDK: 465532d33dfc878f2f9aca281fddbcd4bf9c0197
+  GoogleAppMeasurement: f3abf08495ef2cba7829f15318c373b8d9226491
+  GoogleUserMessagingPlatform: 5f8b30daf181805317b6b985bb51c1ff3beca054
+  GoogleUtilities: d053d902a8edaa9904e1bd00c37535385b8ed152
+  nanopb: 438bc412db1928dac798aa6fd75726007be04262
+  PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
+
+PODFILE CHECKSUM: 9e34316daea0acc7fabb81174f3ddfeb3c6ed647
+
+COCOAPODS: 1.15.2

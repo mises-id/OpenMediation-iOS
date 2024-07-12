@@ -270,6 +270,16 @@ static OMConfig *_instance = nil;
     return unitID;
 }
 
+- (NSArray*)cachedPlacementIds:(NSString*)filter {
+    NSMutableArray *array = [NSMutableArray array];
+    for (OMUnit *unit in _adUnitList) {
+        if (!OM_STR_EMPTY(unit.name) && [unit.name containsString:filter]) {
+            [array addObject:unit.unitID];
+        }
+    }
+    return array;
+}
+
 - (BOOL)isValidAdUnitId:(NSString*)unitID forAdFormat:(OpenMediationAdFormat)adFormat {
     BOOL isValid = NO;
     if (OM_STR_EMPTY(unitID)) {

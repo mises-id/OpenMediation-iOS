@@ -78,6 +78,8 @@ typedef NS_ENUM(NSInteger, OMInitState) {
 
 - (NSString*)defaultUnitIDForAdFormat:(OpenMediationAdFormat)adFormat;
 
+- (NSArray*)cachedPlacementIds:(NSString*)filter;
+
 - (OpenMediationAdFormat)adUnitFormat:(NSString*)unitID;
 
 - (BOOL)isValidAdUnitId:(NSString*)unitID forAdFormat:(OpenMediationAdFormat)adFormat;

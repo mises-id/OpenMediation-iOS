@@ -353,6 +353,7 @@
 		7A5FC19E2C40DF5A002F9C7B /* UIImageView+AnimatedGIF.m in Headers */ = {isa = PBXBuildFile; fileRef = 7A5FC19D2C40DF5A002F9C7B /* UIImageView+AnimatedGIF.m */; };
 		7A5FC19F2C40E28C002F9C7B /* UIImageView+AnimatedGIF.h in Sources */ = {isa = PBXBuildFile; fileRef = 7A5FC19B2C40DF16002F9C7B /* UIImageView+AnimatedGIF.h */; };
 		7A5FC1A02C40E28C002F9C7B /* UIImageView+AnimatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5FC19D2C40DF5A002F9C7B /* UIImageView+AnimatedGIF.m */; };
+		7A5FC1A32C40E820002F9C7B /* AdCarouselViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5FC1A12C40E820002F9C7B /* AdCarouselViewController.m */; };
 		B688661C6E974E664EAAE512 /* Pods_OpenMediationDemo_OpenMediationSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65EAF57F363D2B58CCC27BF /* Pods_OpenMediationDemo_OpenMediationSwiftDemo.framework */; };
 		E4346E9DD605E52482222F63 /* Pods_OpenMediationDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32DB328BE64EFEB3A6874AF /* Pods_OpenMediationDemo.framework */; };
 /* End PBXBuildFile section */
@@ -917,6 +918,8 @@
 		49FD993325A5CF5500787598 /* OMFacebookBidClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMFacebookBidClass.h; sourceTree = "<group>"; };
 		7A5FC19B2C40DF16002F9C7B /* UIImageView+AnimatedGIF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AnimatedGIF.h"; sourceTree = "<group>"; };
 		7A5FC19D2C40DF5A002F9C7B /* UIImageView+AnimatedGIF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AnimatedGIF.m"; sourceTree = "<group>"; };
+		7A5FC1A12C40E820002F9C7B /* AdCarouselViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdCarouselViewController.m; sourceTree = "<group>"; };
+		7A5FC1A22C40E820002F9C7B /* AdCarouselViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdCarouselViewController.h; sourceTree = "<group>"; };
 		7B4ABC2E1B89EB96EC243937 /* Pods-OpenMediationDemo-OpenMediationSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenMediationDemo-OpenMediationSwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-OpenMediationDemo-OpenMediationSwiftDemo/Pods-OpenMediationDemo-OpenMediationSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A5983B336FC1510C7295063A /* Pods-OpenMediationDemo-OpenMediationSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenMediationDemo-OpenMediationSwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-OpenMediationDemo-OpenMediationSwiftDemo/Pods-OpenMediationDemo-OpenMediationSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B65EAF57F363D2B58CCC27BF /* Pods_OpenMediationDemo_OpenMediationSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenMediationDemo_OpenMediationSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1444,6 +1447,8 @@
 		0C981BC023D69A1D0074B43A /* OpenMediationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7A5FC1A22C40E820002F9C7B /* AdCarouselViewController.h */,
+				7A5FC1A12C40E820002F9C7B /* AdCarouselViewController.m */,
 				492371BB268470C90006B8D3 /* CustomXibs */,
 				0C981BC123D69A1D0074B43A /* AppDelegate.h */,
 				0C981BC223D69A1D0074B43A /* AppDelegate.m */,
@@ -3063,6 +3068,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A5FC1A32C40E820002F9C7B /* AdCarouselViewController.m in Sources */,
 				0C981BF023D6D97B0074B43A /* NativeViewController.m in Sources */,
 				0C981BFC23D6DB4E0074B43A /* MainViewController.m in Sources */,
 				0C981BF623D6D9A80074B43A /* RewardedVideoViewController.m in Sources */,

@@ -6,6 +6,7 @@
 #import "NativeViewController.h"
 #import "InterstitialViewController.h"
 #import "RewardedVideoViewController.h"
+#import "AdCarouselViewController.h"
 #import "SplashViewController.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
@@ -40,7 +41,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.titles = @[@"Banner",@"Native",@"Interstitial",@"RewardedVideo",@"Splash",@"CrossPromotion"];
+    self.titles = @[@"Banner",@"Native",@"Interstitial",@"RewardedVideo",@"Splash",@"CrossPromotion", @"AdCarousel"];
     self.title = @"Main";
     self.view.backgroundColor = [UIColor whiteColor];
     [self createViews];
@@ -78,7 +79,7 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    NSArray *vcGroup = @[@"BannerViewController",@"NativeViewController",@"InterstitialViewController",@"RewardedVideoViewController",@"SplashViewController",@"CrossPromotionViewController"];
+    NSArray *vcGroup = @[@"BannerViewController",@"NativeViewController",@"InterstitialViewController",@"RewardedVideoViewController",@"SplashViewController",@"CrossPromotionViewController", @"AdCarouselViewController"];
     if (indexPath.row < vcGroup.count) {
         Class vcClass = NSClassFromString(vcGroup[indexPath.row]);
         UIViewController *vc = [[vcClass alloc] init];

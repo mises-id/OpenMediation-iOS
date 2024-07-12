@@ -2,13 +2,7 @@
 // Licensed under the GNU Lesser General Public License Version 3
 
 #import "BaseViewController.h"
-
-
-
-@interface OMConfig : NSObject
-+ (instancetype) sharedInstance;
-- (NSString*)defaultUnitIDForAdFormat:(OpenMediationAdFormat)adFormat;
-@end
+#import "OMConfig.h"
 
 @interface BaseViewController ()<UITextFieldDelegate,UIScrollViewDelegate>
 

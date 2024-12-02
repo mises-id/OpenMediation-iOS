@@ -46,18 +46,19 @@ static NSTimer *SDKInitCheckTimer = nil;
     
 + (void)initWithAppKey:(NSString*)appKey baseHost:(nonnull NSString *)host {
     if (!initAdFormats) {
-        [self initWithAppKey:appKey baseHost:host adFormat:(OpenMediationAdFormatRewardedVideo|OpenMediationAdFormatInterstitial|OpenMediationAdFormatCrossPromotion)];
+        [self initWithAppKey:appKey baseHost:host adFormat:(OpenMediationAdFormatRewardedVideo|OpenMediationAdFormatInterstitial|OpenMediationAdFormatCrossPromotion) completionHandler:NULL];
     } else {
-        [self initWithAppKey:appKey baseHost:host adFormat:initAdFormats];
+        [self initWithAppKey:appKey baseHost:host adFormat:initAdFormats completionHandler:NULL];
     }
 }
 
 + (void)initWithAppKey:(NSString *)appKey adFormat:(OpenMediationAdFormat)initAdTypes {
-    [self initWithAppKey:appKey baseHost:@"https://ads.test.mises.site" adFormat:initAdTypes];
+    [self initWithAppKey:appKey baseHost:@"https://ads.test.mises.site" adFormat:initAdTypes completionHandler:NULL];
 }
 
 /// Initializes OpenMediation's SDK with the requested ad types.
-+ (void)initWithAppKey:(NSString *)appKey baseHost:(NSString*)host adFormat:(OpenMediationAdFormat)initAdTypes {
++ (void)initWithAppKey:(NSString *)appKey baseHost:(NSString*)host adFormat:(OpenMediationAdFormat)initAdTypes
+     completionHandler:(void (^ _Nullable)(NSError* _Nullable))completionHandler {
     [self initWithAppKey:appKey baseHost:host completionHandler:^(NSError * _Nullable error) {
         if (!error) {
             if (initAdTypes & OpenMediationAdFormatInterstitial) {
@@ -69,6 +70,9 @@ static NSTimer *SDKInitCheckTimer = nil;
             if (initAdTypes & OpenMediationAdFormatCrossPromotion) {
                 [[OMCrossPromotion sharedInstance]preload];
             }
+        }
+        if (completionHandler != NULL) {
+            completionHandler(error);
         }
     }];
     
@@ -365,6 +369,10 @@ static NSTimer *SDKInitCheckTimer = nil;
 
 + (void)setAutoCache:(BOOL)autoCache {
     [OMConfig sharedInstance].autoCache = autoCache;
+}
+
++ (NSArray*)cachedPlacementIds:(NSString*)filter {
+    return [[OMConfig sharedInstance] cachedPlacementIds:filter];
 }
 
 @end

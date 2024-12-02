@@ -26,7 +26,12 @@
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[WelcomeViewController alloc] init]];
     [self.window makeKeyAndVisible];
     [OpenMediation setUseCacheAdFormat:OpenMediationAdFormatSplash];
-    [OpenMediation initWithAppKey:[self getAppKey] baseHost:[self getBaseHost] adFormat:(OpenMediationAdFormatInterstitial|OpenMediationAdFormatRewardedVideo|OpenMediationAdFormatCrossPromotion)];    
+    [OpenMediation initWithAppKey:[self getAppKey]
+                         baseHost:[self getBaseHost]
+                         adFormat:(OpenMediationAdFormatInterstitial|OpenMediationAdFormatRewardedVideo|OpenMediationAdFormatCrossPromotion)
+                completionHandler:^(NSError* _Nullable error) {
+        NSLog(@"OpenMediation initWithAppKey");
+    }];
     return YES;
 }
 

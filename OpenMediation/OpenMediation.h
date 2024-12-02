@@ -35,7 +35,7 @@ extern NSString *kOpenMediatonInitSuccessNotification;
 + (void)initWithAppKey:(NSString *)appKey adFormat:(OpenMediationAdFormat)initAdTypes;
 
 /// Initializes OpenMediation's SDK with the requested ad types.
-+ (void)initWithAppKey:(NSString *)appKey baseHost:(NSString*)host adFormat:(OpenMediationAdFormat)initAdFormats;
++ (void)initWithAppKey:(NSString *)appKey baseHost:(NSString*)host adFormat:(OpenMediationAdFormat)initAdFormats completionHandler:(void (^ _Nullable)(NSError* _Nullable))completionHandler;
 
 /// Check that `OpenMediation` has been initialized
 + (BOOL)isInitialized;
@@ -107,6 +107,8 @@ extern NSString *kOpenMediatonInitSuccessNotification;
 
 /// set auto cache,default is YES
 + (void)setAutoCache:(BOOL)autoCache;
+
++ (NSArray*)cachedPlacementIds:(NSString*)filter;
 
 @end
 

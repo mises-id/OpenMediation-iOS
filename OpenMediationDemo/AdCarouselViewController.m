@@ -2,7 +2,6 @@
 // Licensed under the GNU Lesser General Public License Version 3
 
 #import "AdCarouselViewController.h"
-#import "OMConfig.h"
 
 @implementation AdCarouselViewController
 
@@ -18,26 +17,26 @@
     int banner_width = self.view.bounds.size.width;
     int banner_height = banner_width * 560 / 1200;
     // 初始化 UIScrollView
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0,self.view.bounds.size.height - banner_height, banner_width, banner_height)];
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0,self.view.bounds.size.height - banner_height - 40, banner_width, banner_height)];
     self.scrollView.pagingEnabled = YES;
     self.scrollView.showsHorizontalScrollIndicator = NO;
     self.scrollView.showsVerticalScrollIndicator = NO;
     self.scrollView.bounces = NO;
+    self.scrollView.backgroundColor = [UIColor greenColor];
     
     self.scrollView.delegate = self;
     [self.view addSubview:self.scrollView];
     
     // 初始化 UIPageControl
-    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - 20, self.view.bounds.size.width, 20)];
+    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - 20 - 20, self.view.bounds.size.width, 20)];
     [self.view addSubview:self.pageControl];
-    
-    
+    self.pageControl.backgroundColor = [UIColor blueColor];
     
     [super viewDidLoad];
 }
 
 - (void)loadAd {
-    NSArray* ids = [[OMConfig sharedInstance] cachedPlacementIds:@"carousel"];
+    NSArray* ids = [OpenMediation cachedPlacementIds:@"carousel"];
     [[OMNativeManager sharedInstance]addDelegate:self];
     for (NSString* pid in ids) {
         [[OMNativeManager sharedInstance]loadWithPlacementID:pid];
@@ -73,6 +72,7 @@
     _nativeView.mediaView = [[OMNativeMediaView alloc]initWithFrame:CGRectZero];
     _nativeView.mediaView.frame = CGRectMake(0, 0, scrollViewSize.width, scrollViewSize.height);
     [_nativeView addSubview:_nativeView.mediaView];
+
     //    UIImageView* _iconView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 255, 40, 40)];
     //    [_nativeView addSubview:_iconView];
     
@@ -98,7 +98,7 @@
 }
 
 
-- (void)addAdView:(UIView *)adView {
+/*- (void)addAdView:(UIView *)adView {
     [self.adViews addObject:adView];
     [self updateScrollView];
 }
@@ -106,7 +106,7 @@
 - (void)removeAdView:(UIView *)adView {
     [self.adViews removeObject:adView];
     [self updateScrollView];
-}
+}*/
 
 - (void)updateScrollView {
     // 移除所有子视图

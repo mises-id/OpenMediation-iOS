@@ -13,10 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic, strong) NSMutableArray *adViews;
 @property (nonatomic, strong) NSMutableArray *ads;
-@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong, nullable) NSTimer *timer;
 
-- (void)addAdView:(UIView *)adView;
-- (void)removeAdView:(UIView *)adView;
+// - (void)addAdView:(UIView *)adView;
+// - (void)removeAdView:(UIView *)adView;
 
 @end
 

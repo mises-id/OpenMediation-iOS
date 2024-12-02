@@ -6,7 +6,7 @@ target 'OpenMediationDemo' do
   use_frameworks!
 
  # pod 'AdTimingBidSDK', '5.2.3'
-  pod 'Google-Mobile-Ads-SDK', '9.13.0'
+#  pod 'Google-Mobile-Ads-SDK', '9.13.0'
   pod 'FBAudienceNetwork', '6.12.0'
 #  pod 'UnityAds', '4.4.1'
 #  pod 'VungleSDK-iOS', '6.12.1'

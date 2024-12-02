@@ -57,8 +57,9 @@
 
 
 + (NSString*)omIdfa{
-    NSString *idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-    return OM_SAFE_STRING(idfa);
+    return [self omUserID];
+    // NSString *idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    // return OM_SAFE_STRING(idfa);
 }
 
 + (NSNumber*)omDeviveIDType{

@@ -152,6 +152,9 @@
 }
 
 - (void)nativeCustomEventDidClick:(id)adObject {
+    if (adObject && [adObject conformsToProtocol:@protocol(OMMediatedNativeAd)]) {
+        adObject = [adObject performSelector:@selector(adObject)];
+    }
     OMNativeAd * nativeAd = [_adnNativeAdMap objectForKey:adObject];
     NSMutableDictionary *wrapperData = [NSMutableDictionary dictionary];
     if (nativeAd) {

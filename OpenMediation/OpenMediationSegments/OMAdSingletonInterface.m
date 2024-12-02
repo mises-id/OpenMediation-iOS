@@ -153,4 +153,7 @@
     [[OMEventManager sharedInstance]addEvent:eventID extraData:extraData];
 }
 
+- (void)addAdEvent:(NSInteger)eventID placementID:(NSString*)placementID {
+    [self addAdEvent:eventID placementID:placementID scene:nil extraMsg:nil];
+}
 @end

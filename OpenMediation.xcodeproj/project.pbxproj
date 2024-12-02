@@ -33,11 +33,11 @@
 		0C0E580823E820EA0015C456 /* OMIcRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0E580623E820EA0015C456 /* OMIcRequest.m */; };
 		0C0E580B23E82C3A0015C456 /* OMWaterfallRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C0E580923E82C3A0015C456 /* OMWaterfallRequest.h */; };
 		0C0E580C23E82C3A0015C456 /* OMWaterfallRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0E580A23E82C3A0015C456 /* OMWaterfallRequest.m */; };
-		0C0F88D623D42DD0002AB5C7 /* OMConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C0F88D423D42DD0002AB5C7 /* OMConfig.h */; };
+		0C0F88D623D42DD0002AB5C7 /* OMConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C0F88D423D42DD0002AB5C7 /* OMConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C0F88D723D42DD0002AB5C7 /* OMConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0F88D523D42DD0002AB5C7 /* OMConfig.m */; };
 		0C0F88DA23D42E29002AB5C7 /* OMInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C0F88D823D42E29002AB5C7 /* OMInstance.h */; };
 		0C0F88DB23D42E29002AB5C7 /* OMInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0F88D923D42E29002AB5C7 /* OMInstance.m */; };
-		0C0F88DE23D42E3A002AB5C7 /* OMUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C0F88DC23D42E3A002AB5C7 /* OMUnit.h */; };
+		0C0F88DE23D42E3A002AB5C7 /* OMUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C0F88DC23D42E3A002AB5C7 /* OMUnit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C0F88E223D42E4B002AB5C7 /* OMScene.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C0F88E023D42E4B002AB5C7 /* OMScene.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C0F88E323D42E4B002AB5C7 /* OMScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0F88E123D42E4B002AB5C7 /* OMScene.m */; };
 		0C1796DE25838D980081ED29 /* OMSigMobAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCF87A625821D78005463AD /* OMSigMobAdapter.framework */; };
@@ -1732,6 +1732,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C0F88DE23D42E3A002AB5C7 /* OMUnit.h in Headers */,
+				0C0F88D623D42DD0002AB5C7 /* OMConfig.h in Headers */,
 				491BA52726BD4D050019AE9F /* OMNativeManager.h in Headers */,
 				49C40EB325ABF9D200D3C4AB /* OMImpressionData.h in Headers */,
 				0CBA3006264AA1AF00189404 /* OMNativeAdView.h in Headers */,
@@ -1794,7 +1796,6 @@
 				7A5FC19C2C40DF16002F9C7B /* UIImageView+AnimatedGIF.h in Headers */,
 				0C70AC2D23D198DE0021D67A /* NSDate+OMExtension.h in Headers */,
 				0C86488023EA6FA400CB942D /* OMNativeCustomEvent.h in Headers */,
-				0C0F88D623D42DD0002AB5C7 /* OMConfig.h in Headers */,
 				49FD2BAC23FD619800FFA0EF /* OMHybridLoad.h in Headers */,
 				0C981B9123D55ECE0074B43A /* OMReachability+OMExtentsion.h in Headers */,
 				49EA8859255BD11B00D4B932 /* OMCrossPromotionWebController.h in Headers */,
@@ -1805,7 +1806,6 @@
 				0C70AC4323D1A5920021D67A /* OMBaseRequest.h in Headers */,
 				0C5DB6A823E97C0100842709 /* OMInstanceContainer.h in Headers */,
 				0C70AC3423D1A0CC0021D67A /* OMMacros.h in Headers */,
-				0C0F88DE23D42E3A002AB5C7 /* OMUnit.h in Headers */,
 				0C5DB64F23E94D9900842709 /* NSString+OMEncrypt.h in Headers */,
 				49EA8835255BC71000D4B932 /* OMCrossPromotionNative.h in Headers */,
 				0C86485B23EA64D200CB942D /* UIView+OMExtentsion.h in Headers */,

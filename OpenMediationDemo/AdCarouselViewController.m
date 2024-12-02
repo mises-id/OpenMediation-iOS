@@ -4,7 +4,7 @@
 #import "AdCarouselViewController.h"
 #import "OMEventManager.h"
 #import "OMNative.h"
-#import "OMAdSingletonInterfacePrivate.h"
+#import "OMAdSingletonInterface.h"
 
 @implementation AdCarouselViewController
 
@@ -42,7 +42,7 @@
     NSArray* ids = [OpenMediation cachedPlacementIds:@"carousel"];
     [[OMNativeManager sharedInstance]addDelegate:self];
     for (NSString* pid in ids) {
-        [[OMCrossPromotion sharedInstance] addAdEvent:CALLED_LOAD placementID:pid scene:nil extraMsg:nil];
+        [[OMCrossPromotion sharedInstance] addAdEvent:CALLED_LOAD placementID:pid];
         [[OMNativeManager sharedInstance]loadWithPlacementID:pid];
     }
     
@@ -56,7 +56,7 @@
         view.nativeAd = adinfo[1];
         OMNative *native = adinfo[0];
         
-        [[OMCrossPromotion sharedInstance] addAdEvent:CALLED_SHOW placementID:[native placementID] scene:nil extraMsg:nil];
+        [[OMCrossPromotion sharedInstance] addAdEvent:CALLED_SHOW placementID:[native placementID]];
         
         [self.adViews addObject:view];
     }
@@ -206,6 +206,9 @@
 
 - (void)omNative:(OMNative*)native didLoad:(OMNativeAd*)nativeAd {
     [self.ads addObject:@[native, nativeAd]];
+    
+    [nativeAd setCustomShowAd];
+    
 
     self.showItem.enabled = YES;
     self.removeItem.enabled = YES;
@@ -230,6 +233,9 @@
 
 - (void)omNative:(OMNative*)native nativeAdDidClick:(OMNativeAd*)nativeAd {
     [self showLog:@"Native ad click"];
+    
+    [self showLog:[nativeAd adUrl]];
+    
 }
 
 

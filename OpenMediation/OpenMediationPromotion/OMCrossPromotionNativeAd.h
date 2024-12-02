@@ -28,8 +28,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) double rating;
 @property (nonatomic, copy) NSString *nativeViewClass;
 @property (nonatomic, assign) BOOL impr;
+@property (nonatomic, assign) BOOL customShowAd;
 - (instancetype)initWithCampaign:(OMCrossPromotionCampaign *)campaign;
 - (void)showAd:(UIViewController*)rootViewController;
+
+- (void)setCustomShowAd;
+- (NSString *) adUrl;
 @end
 
 NS_ASSUME_NONNULL_END

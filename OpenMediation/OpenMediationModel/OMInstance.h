@@ -3,7 +3,6 @@
 
 #import <Foundation/Foundation.h>
 #import "OpenMediationConstant.h"
-#import "OMToolUmbrella.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

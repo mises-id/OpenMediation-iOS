@@ -35,7 +35,7 @@
 		0C0E580C23E82C3A0015C456 /* OMWaterfallRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0E580A23E82C3A0015C456 /* OMWaterfallRequest.m */; };
 		0C0F88D623D42DD0002AB5C7 /* OMConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C0F88D423D42DD0002AB5C7 /* OMConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C0F88D723D42DD0002AB5C7 /* OMConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0F88D523D42DD0002AB5C7 /* OMConfig.m */; };
-		0C0F88DA23D42E29002AB5C7 /* OMInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C0F88D823D42E29002AB5C7 /* OMInstance.h */; };
+		0C0F88DA23D42E29002AB5C7 /* OMInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C0F88D823D42E29002AB5C7 /* OMInstance.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C0F88DB23D42E29002AB5C7 /* OMInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0F88D923D42E29002AB5C7 /* OMInstance.m */; };
 		0C0F88DE23D42E3A002AB5C7 /* OMUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C0F88DC23D42E3A002AB5C7 /* OMUnit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C0F88E223D42E4B002AB5C7 /* OMScene.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C0F88E023D42E4B002AB5C7 /* OMScene.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -81,7 +81,7 @@
 		0C5DB6C123E9822400842709 /* OMAdBasePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C5DB6B523E9822400842709 /* OMAdBasePrivate.h */; };
 		0C70AA5A23D165DC0021D67A /* OpenMediation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C70AA5923D165DC0021D67A /* OpenMediation.m */; };
 		0C70AA5C23D165F80021D67A /* OpenMediation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C70AA5B23D165F80021D67A /* OpenMediation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0C70AA5E23D167E00021D67A /* OpenMediationConstant.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C70AA5D23D167E00021D67A /* OpenMediationConstant.h */; };
+		0C70AA5E23D167E00021D67A /* OpenMediationConstant.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C70AA5D23D167E00021D67A /* OpenMediationConstant.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C70AC2123D196110021D67A /* OMRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C70AC1F23D196110021D67A /* OMRequest.h */; };
 		0C70AC2223D196110021D67A /* OMRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C70AC2023D196110021D67A /* OMRequest.m */; };
 		0C70AC2523D1968E0021D67A /* OMInitRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C70AC2323D1968E0021D67A /* OMInitRequest.h */; };
@@ -1732,6 +1732,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C70AA5E23D167E00021D67A /* OpenMediationConstant.h in Headers */,
+				0C0F88DA23D42E29002AB5C7 /* OMInstance.h in Headers */,
 				0C0F88DE23D42E3A002AB5C7 /* OMUnit.h in Headers */,
 				0C0F88D623D42DD0002AB5C7 /* OMConfig.h in Headers */,
 				491BA52726BD4D050019AE9F /* OMNativeManager.h in Headers */,
@@ -1842,11 +1844,9 @@
 				49EA8851255BD0B800D4B932 /* OMCrossPromotionClickHandler.h in Headers */,
 				0C5DB67A23E9670E00842709 /* OMSDKError.h in Headers */,
 				49EA884D255BD08500D4B932 /* OMCrossPromotionCampaign.h in Headers */,
-				0C70AA5E23D167E00021D67A /* OpenMediationConstant.h in Headers */,
 				0C0E580B23E82C3A0015C456 /* OMWaterfallRequest.h in Headers */,
 				0C5DB6A923E97C0100842709 /* OMCustomEventDelegate.h in Headers */,
 				0C86485F23EA675A00CB942D /* OMExposureMonitor.h in Headers */,
-				0C0F88DA23D42E29002AB5C7 /* OMInstance.h in Headers */,
 				49C4143C25AEE47000D3C4AB /* OMImpressionDataRouter.h in Headers */,
 				49EA8849255BD01C00D4B932 /* OMCrossPromotionCampaignManager.h in Headers */,
 				0C981B9423D584140074B43A /* OMNetworkUmbrella.h in Headers */,

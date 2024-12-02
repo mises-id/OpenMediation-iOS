@@ -5,6 +5,7 @@
 #import "OMConfig.h"
 #import "OMMediationAdapter.h"
 #import "OMUserData.h"
+#import "OMToolUmbrella.h"
 
 @interface AdTimingBid : NSObject
 + (NSString *)SDKVersion;

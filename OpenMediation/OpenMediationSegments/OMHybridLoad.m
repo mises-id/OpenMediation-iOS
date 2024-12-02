@@ -3,6 +3,7 @@
 
 #import "OMHybridLoad.h"
 #import "OMConfig.h"
+#import "OMToolUmbrella.h"
 
 @implementation OMHybridLoad
 

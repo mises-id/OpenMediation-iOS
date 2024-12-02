@@ -3,6 +3,7 @@
 
 #import "OMImpressionDataRouter.h"
 #import "OMConfig.h"
+#import "OMToolUmbrella.h"
 
 static OMImpressionDataRouter * _instance = nil;
 

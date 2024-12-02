@@ -4,6 +4,7 @@
 #import "OMCrossPromotionCampaignManager.h"
 #import "OMCrossPromotionClRequest.h"
 #import "OMConfig.h"
+#import "OMToolUmbrella.h"
 
 
 static OMCrossPromotionCampaignManager * _instance = nil;

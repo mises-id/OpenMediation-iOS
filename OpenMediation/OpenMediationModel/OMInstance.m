@@ -2,7 +2,7 @@
 // Licensed under the GNU Lesser General Public License Version 3
 
 #import "OMInstance.h"
-
+#import "OMToolUmbrella.h"
 @implementation OMInstance
 
 -(instancetype)initWithUnitID:(NSString *)unitID instanceData:(NSDictionary *)instanceData {

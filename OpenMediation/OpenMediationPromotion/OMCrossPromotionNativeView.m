@@ -40,6 +40,9 @@
 - (void)observeView:(UIView*)view visible:(BOOL)visible {
     if (self.visible != visible) {
         self.visible = visible;
+        if(_mediaView) {
+            [_mediaView onVisibleChanged:visible];
+        }
         if (self.visible) {
             [self.campaign skStartImpression];
         } else {

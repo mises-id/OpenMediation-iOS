@@ -57,9 +57,12 @@
 
 
 + (NSString*)omIdfa{
+#if TARGET_OS_SIMULATOR
     return [self omUserID];
-    // NSString *idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-    // return OM_SAFE_STRING(idfa);
+#else
+    NSString *idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    return OM_SAFE_STRING(idfa);
+#endif
 }
 
 + (NSNumber*)omDeviveIDType{

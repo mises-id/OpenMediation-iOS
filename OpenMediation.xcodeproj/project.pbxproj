@@ -2059,7 +2059,7 @@
 				0C31059926258FD4000898E2 /* Sources */,
 				0C31059A26258FD4000898E2 /* Frameworks */,
 				0C31059B26258FD4000898E2 /* Resources */,
-				6AC203DFA0FCAA5AA2D81909 /* [CP] Embed Pods Frameworks */,
+				A9AFD83BA0127B27E76E91E7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2116,7 +2116,7 @@
 				0C981BBD23D69A1D0074B43A /* Resources */,
 				492403A323F69CCC00687456 /* Embed App Extensions */,
 				0CDE03A7288A7CBA00796A58 /* Embed Frameworks */,
-				82AEE09FE35AC06183A90A60 /* [CP] Embed Pods Frameworks */,
+				6348DC1BBF03577369407D1D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2856,6 +2856,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Script/publish.sh\" OpenMediationDemo\n";
 		};
+		6348DC1BBF03577369407D1D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenMediationDemo/Pods-OpenMediationDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenMediationDemo/Pods-OpenMediationDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenMediationDemo/Pods-OpenMediationDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		66A3B99D354D51EBA65BFAF7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2878,7 +2895,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6AC203DFA0FCAA5AA2D81909 /* [CP] Embed Pods Frameworks */ = {
+		A9AFD83BA0127B27E76E91E7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2893,23 +2910,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenMediationDemo-OpenMediationSwiftDemo/Pods-OpenMediationDemo-OpenMediationSwiftDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		82AEE09FE35AC06183A90A60 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OpenMediationDemo/Pods-OpenMediationDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OpenMediationDemo/Pods-OpenMediationDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenMediationDemo/Pods-OpenMediationDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D0D06AA11C33EA11D5DB8C5A /* [CP] Check Pods Manifest.lock */ = {

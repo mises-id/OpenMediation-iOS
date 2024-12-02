@@ -10,6 +10,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) OMCrossPromotionNativeAd *nativeAd;
 @property (nonatomic, strong) UIImageView *imgView;
 
+- (void)onVisibleChanged:(BOOL)visible;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -2,6 +2,9 @@
 // Licensed under the GNU Lesser General Public License Version 3
 
 #import "AdCarouselViewController.h"
+#import "OMEventManager.h"
+#import "OMNative.h"
+#import "OMAdSingletonInterfacePrivate.h"
 
 @implementation AdCarouselViewController
 
@@ -22,7 +25,7 @@
     self.scrollView.showsHorizontalScrollIndicator = NO;
     self.scrollView.showsVerticalScrollIndicator = NO;
     self.scrollView.bounces = NO;
-    self.scrollView.backgroundColor = [UIColor greenColor];
+    //self.scrollView.backgroundColor = [UIColor greenColor];
     
     self.scrollView.delegate = self;
     [self.view addSubview:self.scrollView];
@@ -39,6 +42,7 @@
     NSArray* ids = [OpenMediation cachedPlacementIds:@"carousel"];
     [[OMNativeManager sharedInstance]addDelegate:self];
     for (NSString* pid in ids) {
+        [[OMCrossPromotion sharedInstance] addAdEvent:CALLED_LOAD placementID:pid scene:nil extraMsg:nil];
         [[OMNativeManager sharedInstance]loadWithPlacementID:pid];
     }
     
@@ -47,14 +51,19 @@
 
 -(void)showItemAction {
     [super showItemAction];
-    for (OMNativeAd* ad in self.ads) {
+    for (NSArray* adinfo in self.ads) {
         OMNativeView* view = [self genNativeView];
-        view.nativeAd = ad;
+        view.nativeAd = adinfo[1];
+        OMNative *native = adinfo[0];
+        
+        [[OMCrossPromotion sharedInstance] addAdEvent:CALLED_SHOW placementID:[native placementID] scene:nil extraMsg:nil];
+        
         [self.adViews addObject:view];
     }
     
     [self updateScrollView];
     [self resetTimer];
+    
 }
 
 -(void)removeItemAction {
@@ -98,7 +107,7 @@
 }
 
 
-/*- (void)addAdView:(UIView *)adView {
+- (void)addAdView:(UIView *)adView {
     [self.adViews addObject:adView];
     [self updateScrollView];
 }
@@ -106,7 +115,7 @@
 - (void)removeAdView:(UIView *)adView {
     [self.adViews removeObject:adView];
     [self updateScrollView];
-}*/
+}
 
 - (void)updateScrollView {
     // 移除所有子视图
@@ -196,11 +205,12 @@
 #pragma mark -- OMNativeDelegate
 
 - (void)omNative:(OMNative*)native didLoad:(OMNativeAd*)nativeAd {
-    [self.ads addObject:nativeAd];
+    [self.ads addObject:@[native, nativeAd]];
 
     self.showItem.enabled = YES;
     self.removeItem.enabled = YES;
     [self showLog:@"Native ad did load"];
+   
 }
 
 - (void)omNative:(OMNative *)native didLoadAdView:(OMNativeAdView *)nativeAdView {
@@ -215,6 +225,7 @@
 
 - (void)omNative:(OMNative*)native nativeAdDidShow:(OMNativeAd*)nativeAd {
     [self showLog:@"Native ad impression"];
+    
 }
 
 - (void)omNative:(OMNative*)native nativeAdDidClick:(OMNativeAd*)nativeAd {

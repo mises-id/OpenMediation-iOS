@@ -15,12 +15,26 @@
         _callToAction = @"INSTALL";
         _rating = [campaign.model.app[@"rating"] floatValue];
         _nativeViewClass = @"OMCrossPromotionNativeView";
+        _customShowAd = NO;
     }
     return self;
 }
 
 - (void)showAd:(UIViewController*)rootViewController {
-    [_adObject clickAndShowAd:rootViewController sceneID:@""];
+    if (!_customShowAd) {
+        [_adObject clickAndShowAd:rootViewController sceneID:@""];
+    }
+    
 }
 
+
+- (void)setCustomShowAd {
+    _customShowAd = YES;
+}
+- (NSString *) adUrl {
+    if (_adObject == nil || _adObject.model == nil || _adObject.model.link == nil) {
+        return @"";
+    }
+    return _adObject.model.link;
+}
 @end

@@ -7,7 +7,7 @@
 #import "OMBidResponse.h"
 @interface OMNativeAd()
 
-@property (nonatomic, strong) id<OMMediatedNativeAd> mediatedAd;
+@property (nonatomic, strong) id<OMMediatedNativeAd, customAdClick> mediatedAd;
 @property (nonatomic, assign) BOOL rendering;
 @property (nonatomic, assign) BOOL impr;
 @property (nonatomic, strong) NSString *instanceID;
@@ -28,6 +28,21 @@
         _rating = mediatedAd.rating;
     }
     return self;
+}
+
+- (void)setCustomShowAd {
+    if ([_mediatedAd respondsToSelector:@selector(setCustomShowAd)]) {
+        [_mediatedAd setCustomShowAd];
+    }
+    
+    
+}
+- (NSString *) adUrl {
+    if ([_mediatedAd respondsToSelector:@selector(adUrl)]) {
+        return [_mediatedAd adUrl];
+    }
+    return @"";
+    
 }
 
 @end

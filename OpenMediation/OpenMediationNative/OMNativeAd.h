@@ -5,8 +5,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol customAdClick<NSObject>
+
+- (void)setCustomShowAd;
+- (NSString *) adUrl;
+@end
+
 /// The OMNative represents ad metadata to allow you to construct custom ad views.
-@interface OMNativeAd : NSObject
+@interface OMNativeAd : NSObject<customAdClick>
 
 /// Typed access to the ad title.
 @property (nonatomic, copy) NSString *title;
@@ -22,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Typed access to the ad star rating.
 @property (nonatomic, assign) double rating;
+
 
 @end
 

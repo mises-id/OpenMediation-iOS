@@ -136,12 +136,23 @@ static BOOL _tj_configuredStillImageAnimatedImageMutualExclusivity;
     
     if (@available(iOS 13.0, *)) {
         __weak typeof(self) weakSelf = self;
+        __block size_t last_index = 0;
         void (^updateBlock)(size_t, CGImageRef, bool *) = ^(size_t index, CGImageRef  _Nonnull image, bool * _Nonnull stop) {
             __strong typeof(weakSelf) strongSelf = weakSelf;
+            if (index < last_index) {
+                //a new loop
+                *stop = true;
+                if (strongSelf) {
+                    [strongSelf setAnimatedImage:nil];
+                    [strongSelf setAnimatedImage:animatedImage];
+                }
+                return;
+            }
             if (strongSelf && [strongSelf.animatedImage isEqual:animatedImage]) {
                 UIImage *const loadedImage = [UIImage imageWithCGImage:image];
                 [strongSelf _tj_setImageAnimated:loadedImage];
                 animatedImage.size = loadedImage.size;
+                last_index = index;
             } else {
                 *stop = true;
             }
@@ -149,10 +160,14 @@ static BOOL _tj_configuredStillImageAnimatedImageMutualExclusivity;
         
         [self _tj_setImageAnimated:nil];
         
+        NSDictionary *options = @{
+            //(NSString *)kCGImageAnimationLoopCount: @(2) // Set loop count
+        };
+        
         if (animatedImage.data) {
-            CGAnimateImageDataWithBlock((__bridge CFDataRef)animatedImage.data, nil, updateBlock);
+            CGAnimateImageDataWithBlock((__bridge CFDataRef)animatedImage.data,  (__bridge CFDictionaryRef)options, updateBlock);
         } else if (animatedImage.url) {
-            CGAnimateImageAtURLWithBlock((__bridge CFURLRef)animatedImage.url, nil, updateBlock);
+            CGAnimateImageAtURLWithBlock((__bridge CFURLRef)animatedImage.url,  (__bridge CFDictionaryRef)options, updateBlock);
         }
     } else {
         if (animatedImage.data) {

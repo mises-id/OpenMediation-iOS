@@ -7,6 +7,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface OMAdSingletonInterface : NSObject
 
+
+- (void)addAdEvent:(NSInteger)eventID placementID:(NSString*)placementID;
+
 @end
 
 NS_ASSUME_NONNULL_END

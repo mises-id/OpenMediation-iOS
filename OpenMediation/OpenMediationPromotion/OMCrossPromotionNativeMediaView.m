@@ -45,4 +45,24 @@
         [_nativeAd.adDelegate OMCrossPromotionNativeAdDidClick:_nativeAd];
     }
 }
+
+- (void)onVisibleChanged:(BOOL)visible {
+    if (_nativeAd == nil) {
+        return;
+    }
+    
+    NSData* data  = [NSData dataWithContentsOfFile:[_nativeAd.adObject mainImgCachePath]];
+    if ([self isGIF:data]) {
+        if (visible) {
+            _imgView.animatedImage = [TJAnimatedImage animatedImageWithData:data];
+        } else {
+            _imgView.animatedImage = nil;
+            _imgView.image = [UIImage imageWithData:data];
+        }
+        
+    } else {
+        
+    }
+    
+}
 @end

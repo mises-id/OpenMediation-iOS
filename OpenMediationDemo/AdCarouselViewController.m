@@ -199,7 +199,7 @@
 }
 - (void) resetTimer {
     [self clearTimer];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(nextAd) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(nextAd) userInfo:nil repeats:YES];
 }
 
 #pragma mark -- OMNativeDelegate

@@ -6,6 +6,7 @@
 #import "OMUserData.h"
 #import "OMConfig.h"
 #import "OMUserData.h"
+#import "OMToolUmbrella.h"
 
 @implementation OMImpressionData
 - (instancetype)initWithUnit:(OMUnit*)unit  instance:(OMInstance*)instance scene:(OMScene*)scene {

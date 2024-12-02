@@ -3,7 +3,7 @@
 
 #import "OMUnit.h"
 #import "OMEventManager.h"
-
+#import "OMToolUmbrella.h"
 @implementation OMUnit
 - (instancetype)initWithUnitData:(NSDictionary*)unitData {
     if (self = [super init]) {

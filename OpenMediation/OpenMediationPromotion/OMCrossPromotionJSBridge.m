@@ -4,6 +4,7 @@
 #import "OMCrossPromotionJSBridge.h"
 #import "OMConfig.h"
 #import "OMRequest.h"
+#import "OMToolUmbrella.h"
 
 @implementation OMCrossPromotionJSBridge
 

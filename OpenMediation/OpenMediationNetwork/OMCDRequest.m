@@ -4,6 +4,7 @@
 #import "OMCDRequest.h"
 #import "OMRequest.h"
 #import "OMConfig.h"
+#import "OMToolUmbrella.h"
 
 @implementation OMCDRequest
 
